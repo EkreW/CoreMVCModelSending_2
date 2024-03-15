@@ -1,0 +1,43 @@
+﻿@model GetProductsPageVM
+
+<h1>Çalışan => @Model.Employee.FirstName @Model.Employee.LastName</h1>
+<h4>@Model.Category.CategoryName</h4>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Urun ID</th>
+            <th>Urun Ismi</th>
+            <th>Urun Fiyatı</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Product item in Model.Products)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.ProductName</td>
+                <td>@item.UnitPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<hr />
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Şirket Ismi</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Supplier item in Model.Suppliers)
+        {
+            <tr>
+                <td>@item.CompanyName</td>
+            </tr>
+        }
+    </tbody>
+</table>
